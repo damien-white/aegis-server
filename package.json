@@ -1,34 +1,41 @@
 {
   "name": "@dark-fusion/aegis",
   "version": "0.0.1",
-  "description": "Simple API gateway and edge server",
-  "author": "Dark Fusion Systems",
+  "description": "API gateway for Dark Fusion Systems",
+  "author": {
+    "name": "Peter Donovan",
+    "url": "https://github.com/dark-fusion",
+    "email": "development@darkfusion.io"
+  },
   "private": true,
   "packageManager": "pnpm@7.0.0",
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "fmt:check": "prettier --check \"{lib,src,test,tools}/**/*.ts\"",
+    "fmt:write": "prettier --write \"{lib,src,test,tools}/**/*.ts\"",
+    "lint": "eslint \"{lib,src,test,tools}/**/*.ts\" --fix --max-warnings 1",
+    "test-all": "pnpm test && pnpm test:cov && pnpm test:e2e",
+    "typecheck": "tsc --noEmit",
+    "ci:precommit": "pnpm typecheck && pnpm fmt:write && pnpm ci:lint && pnpm ci:test"
   },
   "dependencies": {
-    "@nestjs/common": "^8.0.0",
-    "@nestjs/core": "^8.0.0",
-    "@nestjs/platform-express": "^8.0.0",
-    "@nestjs/platform-fastify": "^8.4.4",
+    "@nestjs/common": "^8.4.4",
+    "@nestjs/core": "^8.4.4",
+    "@nestjs/platform-express": "^8.4.4",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.5.5"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",
@@ -43,6 +50,7 @@
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
     "jest": "28.0.3",
     "prettier": "^2.3.2",
     "source-map-support": "^0.5.20",

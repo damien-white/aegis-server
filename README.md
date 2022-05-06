@@ -24,50 +24,48 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Aegis is a lightweight "API Gateway", providing access to internal APIs and services.
+
+For examples of some of our other services, please see the following:
+- [warden][warden-repo] (active development): Automation service for the "build-test-deploy" process
+- [elucidate][elucidate-repo] (active development): JSON parser / validator
 
 ## Installation
 
 ```bash
-$ npm install
+$ pnpm install
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ pnpm start
 
 # watch mode
-$ npm run start:dev
+$ pnpm start:dev
 
 # production mode
-$ npm run start:prod
+$ pnpm start:prod
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ npm run test
+$ pnpm test
 
 # e2e tests
-$ npm run test:e2e
+$ pnpm test:e2e
 
 # test coverage
-$ npm run test:cov
+$ pnpm test:cov
 ```
 
-## Support
+## Licensing
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Aegis is licensed under the [MIT license](/LICENSE).
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+<!-- Dark Fusion Systems project links -->
+[elucidate-repo]: https://github.com/dark-fusion/elucidate
+[warden-repo]: https://github.com/dark-fusion/warden

@@ -1,35 +1,46 @@
+### Aegis
+
+## Node.js
 # compiled output
 /dist
 /node_modules
 
-# Logs
-logs
+# Testing
+/coverage
+/.nyc_output
+
+## Local / Development
+# Environment variables
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Direnv auto-export scripts
+.envrc*
+
+# Internal specifications
+/_internal
+/_spec
+
+## Telemetry and Logging
+# Application logs
+logs/
 *.log
+
+# Debug logs
 npm-debug.log*
 pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
-# OS
-.DS_Store
-
-# Tests
-/coverage
-/.nyc_output
-
-# IDEs and editors
+## IDE's and Editors
+# JetBrains
 /.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+# VSCode
+.vscode/
 
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+## Miscellaneous
+# macOS
+.DS_Store
